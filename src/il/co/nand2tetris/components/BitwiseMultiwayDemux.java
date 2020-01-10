@@ -48,6 +48,25 @@ public class BitwiseMultiwayDemux extends Gate
 		control.connectInput(wsControl);
 	}
 
+	public WireSet getInput()
+	{
+		return input;
+	}
+
+	public WireSet getControl()
+	{
+		return control;
+	}
+
+	public WireSet[] getOutputs()
+	{
+		return outputs;
+	}
+
+	/**
+	 * TODO Fix
+	 * @return
+	 */
 	@Override
 	public boolean TestGate()
 	{

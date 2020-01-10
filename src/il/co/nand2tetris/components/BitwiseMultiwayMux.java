@@ -50,6 +50,21 @@ public class BitwiseMultiwayMux extends Gate
 		control.connectInput(wsControl);
 	}
 
+	public WireSet getOutput()
+	{
+		return output;
+	}
+
+	public WireSet getControl()
+	{
+		return control;
+	}
+
+	public WireSet[] getInputs()
+	{
+		return inputs;
+	}
+
 	@Override
 	public boolean TestGate()
 	{

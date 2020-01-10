@@ -76,6 +76,10 @@ public class ALU extends Gate
 		zero.connectInput(not.getOutput());//V
 	}
 
+	/**
+	 * TODO Fix
+	 * @return
+	 */
 	@SuppressWarnings("DuplicatedCode")
 	@Override
 	public boolean TestGate()

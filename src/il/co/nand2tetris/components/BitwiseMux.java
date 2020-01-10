@@ -22,6 +22,11 @@ public class BitwiseMux extends BitwiseTwoInputGate
 		controlInput.connectInput(wControl);
 	}
 
+	public Wire getControlInput()
+	{
+		return controlInput;
+	}
+
 	@SuppressWarnings("DuplicatedCode")
 	@Override
 	public boolean TestGate()
