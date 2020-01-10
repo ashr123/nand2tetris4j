@@ -13,6 +13,8 @@ public class WireSet
 
 	public WireSet(int iSize)
 	{
+		if (iSize > 30)
+			throw new IllegalArgumentException("iSize cannot be over 30, got: " + iSize);
 		m_aWires = new Wire[iSize];
 		Arrays.setAll(m_aWires, i -> new Wire());
 	}

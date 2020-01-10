@@ -2,7 +2,7 @@ package il.co.nand2tetris.components;
 
 public class NAndGate extends TwoInputGate implements Component
 {
-	private static int nandGates, nandCompute;
+	private static long nandGates, nandCompute;
 
 	public NAndGate()
 	{
@@ -11,12 +11,12 @@ public class NAndGate extends TwoInputGate implements Component
 		getInput2().connectOutput(this);
 	}
 
-	public static int getNandGates()
+	public static long getNandGates()
 	{
 		return nandGates;
 	}
 
-	public static int getNandCompute()
+	public static long getNandCompute()
 	{
 		return nandCompute;
 	}

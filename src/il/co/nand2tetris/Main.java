@@ -8,7 +8,8 @@ public class Main
 	public static void main(String[] args)
 	{
 		// write your code here
-		final byte size = 8;
+		final byte size = 30;
+		System.out.println("Building...");
 		NAndGate nAndGate = new NAndGate();
 		NotGate not = new NotGate();
 		AndGate and = new AndGate();
@@ -23,8 +24,8 @@ public class Main
 		Demux demux = new Demux();
 		BitwiseMux bitwiseMux = new BitwiseMux(size);
 		BitwiseDemux bitwiseDemux = new BitwiseDemux(size);
-		BitwiseMultiwayMux bitwiseMultiwayMux = new BitwiseMultiwayMux(size, 3);
-		BitwiseMultiwayDemux bitwiseMultiwayDemux = new BitwiseMultiwayDemux(size, 3);
+		BitwiseMultiwayMux bitwiseMultiwayMux = new BitwiseMultiwayMux(size, 8);
+		BitwiseMultiwayDemux bitwiseMultiwayDemux = new BitwiseMultiwayDemux(size, 8);
 		HalfAdder halfAdder = new HalfAdder();
 		FullAdder fullAdder = new FullAdder();
 		WireSet wireSet = new WireSet(size);
@@ -38,6 +39,7 @@ public class Main
 		//int a = wireSet.GetValue();
 		wireSet.Set2sComplement(-5);
 		int b = wireSet.Get2sComplement();
+		System.out.println("Testing...");
 		if (!nAndGate.TestGate() ||
 				!not.TestGate() ||
 				!and.TestGate() ||
@@ -53,7 +55,7 @@ public class Main
 				!bitwiseMux.TestGate() ||
 				!bitwiseDemux.TestGate() ||
 				!bitwiseMultiwayMux.TestGate() ||
-				/*!bitwiseMultiwayDemux.TestGate() ||*/
+				!bitwiseMultiwayDemux.TestGate() ||
 				!halfAdder.TestGate() ||
 				!fullAdder.TestGate() ||
 				!multiBitAdder.TestGate() /*||
@@ -63,5 +65,9 @@ public class Main
 				!memory.TestGate()*/)
 			System.out.println("bugbug");
 		System.out.println("done");
+		System.out.println("Nand Gates: " + NAndGate.getNandGates() + '\n' +
+				"Nand Gates computed: " + NAndGate.getNandCompute() + '\n' +
+				"Not Gates: " + NotGate.getNotGates() + '\n' +
+				"Not Gates computed: " + NotGate.getNotComputed());
 	}
 }

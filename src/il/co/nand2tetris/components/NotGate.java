@@ -2,7 +2,7 @@ package il.co.nand2tetris.components;
 
 public class NotGate extends Gate implements Component
 {
-	private static int notGates, notComputed;
+	private static long notGates, notComputed;
 	private Wire
 			input = new Wire(),
 			output = new Wire();
@@ -13,12 +13,12 @@ public class NotGate extends Gate implements Component
 		input.connectOutput(this);
 	}
 
-	public static int getNotGates()
+	public static long getNotGates()
 	{
 		return notGates;
 	}
 
-	public static int getNotComputed()
+	public static long getNotComputed()
 	{
 		return notComputed;
 	}

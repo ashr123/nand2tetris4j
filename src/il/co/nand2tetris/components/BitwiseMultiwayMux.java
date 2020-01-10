@@ -7,6 +7,8 @@ public class BitwiseMultiwayMux extends Gate
 
 	public BitwiseMultiwayMux(int iSize, int cControlBits)
 	{
+		if (cControlBits > 30)
+			throw new IllegalArgumentException("cControlBits cannot be over 30, got: " + cControlBits);
 		inputs = new WireSet[1 << cControlBits]; // 2^cControlBits
 		output = new WireSet(iSize);
 		control = new WireSet(cControlBits);
