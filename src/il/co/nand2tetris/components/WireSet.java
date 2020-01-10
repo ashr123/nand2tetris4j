@@ -27,9 +27,9 @@ public class WireSet
 		if (isInputConnected)
 			throw new IllegalStateException("Cannot connect a wire to more than one inputs");
 		if (wIn.m_aWires.length != m_aWires.length)
-			throw new IllegalStateException("Cannot connect two wire sets of different sizes.");
+			throw new IllegalStateException("Cannot connect two wire sets of different sizes");
 		for (int i = 0; i < m_aWires.length; i++)
-			m_aWires[i].connectInput(wIn.getWireAt(i));
+			m_aWires[i].connectInput(wIn.m_aWires[i]);
 		isInputConnected = true;
 	}
 
