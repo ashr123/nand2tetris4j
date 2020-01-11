@@ -29,7 +29,7 @@ public class BitwiseNotGate extends Gate
 		return output;
 	}
 
-	public void ConnectInput(WireSet ws)
+	public void connectInput(WireSet ws)
 	{
 		input.connectInput(ws);
 	}

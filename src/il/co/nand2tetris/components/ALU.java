@@ -42,12 +42,12 @@ public class ALU extends Gate
 		zyMux.connectControl(zeroY);
 		//zxMux, zyMux input2's wires remains at 0
 
-		nx.ConnectInput(zxMux.getOutput());
+		nx.connectInput(zxMux.getOutput());
 		nxMux.connectInput1(zxMux.getOutput());
 		nxMux.connectInput2(nx.getOutput());
 		nxMux.connectControl(notX);
 
-		ny.ConnectInput(zyMux.getOutput());
+		ny.connectInput(zyMux.getOutput());
 		nyMux.connectInput1(zyMux.getOutput());
 		nyMux.connectInput2(ny.getOutput());
 		nyMux.connectControl(notY);
@@ -62,7 +62,7 @@ public class ALU extends Gate
 		fMux.connectInput2(adder.getOutput());
 		fMux.connectControl(f);
 
-		no.ConnectInput(fMux.getOutput());
+		no.connectInput(fMux.getOutput());
 		noMux.connectInput1(fMux.getOutput());
 		noMux.connectInput2(no.getOutput());
 		noMux.connectControl(notOutput);
@@ -76,10 +76,6 @@ public class ALU extends Gate
 		zero.connectInput(not.getOutput());//V
 	}
 
-	/**
-	 * TODO Fix
-	 * @return
-	 */
 	@SuppressWarnings("DuplicatedCode")
 	@Override
 	public boolean TestGate()
@@ -250,6 +246,7 @@ public class ALU extends Gate
 		if (output.Get2sComplement() != inputY.Get2sComplement() - inputX.Get2sComplement() || negative.getValue() != result.getWireAt(result.getSize() - 1).getValue() || zero.getValue() != (numY - numX == 0 ? 1 : 0))//y-x
 			return false;
 
+		//TODO fix!!!
 		zeroX.setValue(0);
 		notX.setValue(0);
 		zeroY.setValue(0);
@@ -259,6 +256,7 @@ public class ALU extends Gate
 		if (output.Get2sComplement() != bitwiseAnd.getOutput().Get2sComplement() || negative.getValue() != bitwiseAnd.getOutput().getWireAt(bitwiseAnd.getOutput().getSize() - 1).getValue() || zero.getValue() != TestZero())//x&y
 			return false;
 
+		//TODO fix!!!
 		zeroX.setValue(0);
 		notX.setValue(1);
 		zeroY.setValue(0);
@@ -274,5 +272,60 @@ public class ALU extends Gate
 			if (output.getWireAt(i).getValue() == 1)
 				return 0;
 		return 1;
+	}
+
+	public WireSet getInputX()
+	{
+		return inputX;
+	}
+
+	public WireSet getInputY()
+	{
+		return inputY;
+	}
+
+	public WireSet getOutput()
+	{
+		return output;
+	}
+
+	public Wire getZeroX()
+	{
+		return zeroX;
+	}
+
+	public Wire getZeroY()
+	{
+		return zeroY;
+	}
+
+	public Wire getNotX()
+	{
+		return notX;
+	}
+
+	public Wire getNotY()
+	{
+		return notY;
+	}
+
+	public Wire getF()
+	{
+		return f;
+	}
+
+	public Wire getNotOutput()
+	{
+		return notOutput;
+	}
+
+	public Wire getZero()
+	{
+		return zero;
+	}
+
+	public Wire getNegative()
+	{
+		return negative;
 	}
 }
