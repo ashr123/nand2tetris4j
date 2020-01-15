@@ -62,7 +62,7 @@ public class WireSet
 	{
 		//throw new NotImplementedException();
 		//if (iValue == 0)
-		for (Wire m_aWire : m_aWires)
+		for (final Wire m_aWire : m_aWires)
 			m_aWire.setValue(0);
 		int index = 0;
 		while (iValue > 0)
@@ -107,7 +107,7 @@ public class WireSet
 	 *
 	 * @param iValue
 	 */
-	public void Set2sComplement(int iValue)
+	public void Set2sComplement(final int iValue)
 	{
 		//throw new NotImplementedException();
 		if (iValue >= 0)

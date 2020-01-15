@@ -5,7 +5,7 @@ public class BitwiseMultiwayDemux extends Gate
 	private final WireSet input, control;
 	private final WireSet[] outputs;
 
-	public BitwiseMultiwayDemux(int iSize, int cControlBits)
+	public BitwiseMultiwayDemux(final int iSize, final int cControlBits)
 	{
 		if (cControlBits > 30)
 			throw new IllegalArgumentException("cControlBits cannot be over 30, got: " + cControlBits);
@@ -37,12 +37,12 @@ public class BitwiseMultiwayDemux extends Gate
 		bitwiseDemux[0].connectInput(input);
 	}
 
-	public void connectInput(WireSet wsInput)
+	public void connectInput(final WireSet wsInput)
 	{
 		input.connectInput(wsInput);
 	}
 
-	public void connectControl(WireSet wsControl)
+	public void connectControl(final WireSet wsControl)
 	{
 		control.connectInput(wsControl);
 	}

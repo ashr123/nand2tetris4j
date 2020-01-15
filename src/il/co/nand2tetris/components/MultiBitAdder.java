@@ -5,7 +5,7 @@ public class MultiBitAdder extends Gate
 	private final WireSet input1, input2, output;
 	private final Wire overflow = new Wire();
 
-	public MultiBitAdder(int iSize)
+	public MultiBitAdder(final int iSize)
 	{
 		input1 = new WireSet(iSize);
 		input2 = new WireSet(iSize);
@@ -55,12 +55,12 @@ public class MultiBitAdder extends Gate
 		return overflow;
 	}
 
-	public void connectInput1(WireSet wInput)
+	public void connectInput1(final WireSet wInput)
 	{
 		input1.connectInput(wInput);
 	}
 
-	public void connectInput2(WireSet wInput)
+	public void connectInput2(final WireSet wInput)
 	{
 		input2.connectInput(wInput);
 	}

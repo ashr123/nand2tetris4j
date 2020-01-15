@@ -2,7 +2,7 @@ package il.co.nand2tetris.components;
 
 public class HalfAdder extends TwoInputGate
 {
-	private Wire carryOutput = new Wire();
+	private final Wire carryOutput = new Wire();
 
 	public HalfAdder()
 	{

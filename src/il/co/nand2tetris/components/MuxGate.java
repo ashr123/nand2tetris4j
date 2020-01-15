@@ -2,7 +2,7 @@ package il.co.nand2tetris.components;
 
 public class MuxGate extends TwoInputGate
 {
-	private Wire controlInput = new Wire();
+	private final Wire controlInput = new Wire();
 
 	public MuxGate()
 	{
@@ -32,7 +32,7 @@ public class MuxGate extends TwoInputGate
 		return controlInput;
 	}
 
-	public void ConnectControl(Wire wControl)
+	public void ConnectControl(final Wire wControl)
 	{
 		controlInput.connectInput(wControl);
 	}

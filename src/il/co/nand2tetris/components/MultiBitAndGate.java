@@ -2,7 +2,7 @@ package il.co.nand2tetris.components;
 
 public class MultiBitAndGate extends MultiBitGate
 {
-	public MultiBitAndGate(int iInputCount)
+	public MultiBitAndGate(final int iInputCount)
 	{
 		super(iInputCount);
 		final AndGate[] and = new AndGate[iInputCount - 1];

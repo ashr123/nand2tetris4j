@@ -5,7 +5,7 @@ public class BitwiseDemux extends Gate
 	private final WireSet output1, output2, input;
 	private final Wire control = new Wire();
 
-	public BitwiseDemux(int iSize)
+	public BitwiseDemux(final int iSize)
 	{
 		input = new WireSet(iSize);
 		//your code here
@@ -22,12 +22,12 @@ public class BitwiseDemux extends Gate
 		}
 	}
 
-	public void connectControl(Wire wControl)
+	public void connectControl(final Wire wControl)
 	{
 		control.connectInput(wControl);
 	}
 
-	public void connectInput(WireSet wsInput)
+	public void connectInput(final WireSet wsInput)
 	{
 		input.connectInput(wsInput);
 	}

@@ -2,9 +2,9 @@ package il.co.nand2tetris.components;
 
 public class BitwiseMux extends BitwiseTwoInputGate
 {
-	private Wire controlInput = new Wire();
+	private final Wire controlInput = new Wire();
 
-	public BitwiseMux(int iSize)
+	public BitwiseMux(final int iSize)
 	{
 		super(iSize);
 		for (int i = 0; i < iSize; i++)
@@ -17,7 +17,7 @@ public class BitwiseMux extends BitwiseTwoInputGate
 		}
 	}
 
-	public void connectControl(Wire wControl)
+	public void connectControl(final Wire wControl)
 	{
 		controlInput.connectInput(wControl);
 	}

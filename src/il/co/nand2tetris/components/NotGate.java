@@ -33,7 +33,7 @@ public class NotGate extends Gate implements Component
 		return output;
 	}
 
-	public void connectInput(Wire wInput)
+	public void connectInput(final Wire wInput)
 	{
 		input.connectInput(wInput);
 	}

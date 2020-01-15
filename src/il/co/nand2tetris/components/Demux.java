@@ -26,12 +26,12 @@ public class Demux extends Gate
 		output2.connectInput(xAndC.getOutput());
 	}
 
-	public void connectControl(Wire wControl)
+	public void connectControl(final Wire wControl)
 	{
 		control.connectInput(wControl);
 	}
 
-	public void connectInput(Wire wInput)
+	public void connectInput(final Wire wInput)
 	{
 		input.connectInput(wInput);
 	}

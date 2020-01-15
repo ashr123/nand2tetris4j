@@ -2,7 +2,7 @@ package il.co.nand2tetris.components;
 
 public class BitwiseAndGate extends BitwiseTwoInputGate
 {
-	public BitwiseAndGate(int iSize)
+	public BitwiseAndGate(final int iSize)
 	{
 		super(iSize);
 		for (int i = 0; i < iSize; i++)

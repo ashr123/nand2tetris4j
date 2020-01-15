@@ -2,7 +2,7 @@ package il.co.nand2tetris.components;
 
 public class BitwiseOrGate extends BitwiseTwoInputGate
 {
-	public BitwiseOrGate(int iSize)
+	public BitwiseOrGate(final int iSize)
 	{
 		super(iSize);
 		for (int i = 0; i < iSize; i++)

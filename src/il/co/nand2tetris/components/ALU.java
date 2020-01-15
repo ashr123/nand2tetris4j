@@ -13,7 +13,7 @@ public class ALU extends Gate
 			zero = new Wire(),
 			negative = new Wire();
 
-	public ALU(int iSize)
+	public ALU(final int iSize)
 	{
 		inputX = new WireSet(iSize);
 		inputY = new WireSet(iSize);

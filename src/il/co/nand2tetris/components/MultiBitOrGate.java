@@ -2,7 +2,7 @@ package il.co.nand2tetris.components;
 
 public class MultiBitOrGate extends MultiBitGate
 {
-	public MultiBitOrGate(int iInputCount)
+	public MultiBitOrGate(final int iInputCount)
 	{
 		super(iInputCount);
 		final OrGate[] or = new OrGate[iInputCount - 1];

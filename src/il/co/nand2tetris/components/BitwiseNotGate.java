@@ -4,7 +4,7 @@ public class BitwiseNotGate extends Gate
 {
 	private final WireSet input, output;
 
-	public BitwiseNotGate(int iSize)
+	public BitwiseNotGate(final int iSize)
 	{
 		input = new WireSet(iSize);
 		output = new WireSet(iSize);
@@ -29,7 +29,7 @@ public class BitwiseNotGate extends Gate
 		return output;
 	}
 
-	public void connectInput(WireSet ws)
+	public void connectInput(final WireSet ws)
 	{
 		input.connectInput(ws);
 	}

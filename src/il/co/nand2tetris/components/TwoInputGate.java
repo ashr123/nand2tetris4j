@@ -10,12 +10,12 @@ public abstract class TwoInputGate extends Gate
 			input2 = new Wire(),
 			output = new Wire();
 
-	public void connectInput1(Wire wInput)
+	public void connectInput1(final Wire wInput)
 	{
 		input1.connectInput(wInput);
 	}
 
-	public void connectInput2(Wire wInput)
+	public void connectInput2(final Wire wInput)
 	{
 		input2.connectInput(wInput);
 	}

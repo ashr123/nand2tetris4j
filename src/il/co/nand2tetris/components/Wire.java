@@ -28,7 +28,7 @@ public class Wire implements Component
 		return value;
 	}
 
-	public void setValue(int value)
+	public void setValue(final int value)
 	{
 		if (value != 0 && value != 1)
 			throw new IllegalArgumentException("Illegal value for wire, got " + value);
@@ -40,7 +40,7 @@ public class Wire implements Component
 				component.compute();
 	}
 
-	public void connectInput(Wire wIn)
+	public void connectInput(final Wire wIn)
 	{
 		if (isInputConnected)
 			throw new IllegalStateException("Cannot connect a wire to more than one inputs");
@@ -49,7 +49,7 @@ public class Wire implements Component
 		value = wIn.value;
 	}
 
-	public void connectOutput(Component cOut)
+	public void connectOutput(final Component cOut)
 	{
 		outputs.add(cOut);
 		cOut.compute();
