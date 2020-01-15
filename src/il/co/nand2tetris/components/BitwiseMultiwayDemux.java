@@ -1,5 +1,7 @@
 package il.co.nand2tetris.components;
 
+import java.util.Arrays;
+
 public class BitwiseMultiwayDemux extends Gate
 {
 	private final WireSet input, control;
@@ -17,8 +19,7 @@ public class BitwiseMultiwayDemux extends Gate
 
 		//your code here
 		final BitwiseDemux[] bitwiseDemux = new BitwiseDemux[outputs.length - 1];
-		for (int i = 0; i < bitwiseDemux.length; i++)
-			bitwiseDemux[i] = new BitwiseDemux(iSize);
+		Arrays.setAll(bitwiseDemux, i -> new BitwiseDemux(iSize));
 
 		for (int i = 0, count = bitwiseDemux.length - 1; i < outputs.length; i += 2)
 		{
@@ -29,9 +30,9 @@ public class BitwiseMultiwayDemux extends Gate
 
 		for (int i = bitwiseDemux.length; i > 2; i -= 2)
 		{
-			bitwiseDemux[i - 1].connectInput(bitwiseDemux[(i / 2) - 1].getOutput1());
-			bitwiseDemux[i - 2].connectInput(bitwiseDemux[(i / 2) - 1].getOutput2());
-			bitwiseDemux[(i / 2) - 1].connectControl(control.getWireAt(control.getSize() - 1 - log2(i / 2)));
+			bitwiseDemux[i - 1].connectInput(bitwiseDemux[i / 2 - 1].getOutput1());
+			bitwiseDemux[i - 2].connectInput(bitwiseDemux[i / 2 - 1].getOutput2());
+			bitwiseDemux[i / 2 - 1].connectControl(control.getWireAt(control.getSize() - 1 - log2(i / 2)));
 		}
 
 		bitwiseDemux[0].connectInput(input);

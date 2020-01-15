@@ -25,28 +25,13 @@ public abstract class TwoInputGate extends Gate
 		return input1;
 	}
 
-//	public void setInput1(Wire input1)
-//	{
-//		this.input1 = input1;
-//	}
-
 	public Wire getInput2()
 	{
 		return input2;
 	}
 
-//	public void setInput2(Wire input2)
-//	{
-//		this.input2 = input2;
-//	}
-
 	public Wire getOutput()
 	{
 		return output;
 	}
-
-//	public void setOutput(Wire output)
-//	{
-//		this.output = output;
-//	}
 }

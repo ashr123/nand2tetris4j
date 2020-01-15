@@ -10,7 +10,6 @@ public class BitwiseNotGate extends Gate
 		output = new WireSet(iSize);
 
 		//your code here
-		//not = new NotGate[iSize];
 		for (int i = 0; i < iSize; i++)
 		{
 			final NotGate not = new NotGate();
