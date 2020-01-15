@@ -5,7 +5,7 @@ package il.co.nand2tetris.components;
  */
 public abstract class BitwiseTwoInputGate extends Gate
 {
-	private WireSet input1, input2, output;
+	private final WireSet input1, input2, output;
 
 	public BitwiseTwoInputGate(int iSize)
 	{

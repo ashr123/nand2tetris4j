@@ -7,7 +7,7 @@ public class BitwiseOrGate extends BitwiseTwoInputGate
 		super(iSize);
 		for (int i = 0; i < iSize; i++)
 		{
-			OrGate or = new OrGate();
+			final OrGate or = new OrGate();
 			or.connectInput1(getInput1().getWireAt(i));
 			or.connectInput2(getInput2().getWireAt(i));
 			getOutput().getWireAt(i).connectInput(or.getOutput());

@@ -2,7 +2,7 @@ package il.co.nand2tetris.components;
 
 public class BitwiseNotGate extends Gate
 {
-	private WireSet input, output;
+	private final WireSet input, output;
 
 	public BitwiseNotGate(int iSize)
 	{
@@ -13,7 +13,7 @@ public class BitwiseNotGate extends Gate
 		//not = new NotGate[iSize];
 		for (int i = 0; i < iSize; i++)
 		{
-			NotGate not = new NotGate();
+			final NotGate not = new NotGate();
 			not.connectInput(input.getWireAt(i));
 			output.getWireAt(i).connectInput(not.getOutput());
 		}

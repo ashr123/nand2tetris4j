@@ -2,8 +2,8 @@ package il.co.nand2tetris.components;
 
 public class MultiBitAdder extends Gate
 {
-	private WireSet input1, input2, output;
-	private Wire overflow = new Wire();
+	private final WireSet input1, input2, output;
+	private final Wire overflow = new Wire();
 
 	public MultiBitAdder(int iSize)
 	{
@@ -11,8 +11,8 @@ public class MultiBitAdder extends Gate
 		input2 = new WireSet(iSize);
 		output = new WireSet(iSize);
 
-		HalfAdder halfAdder = new HalfAdder();
-		FullAdder[] fullAdders = new FullAdder[iSize - 1];
+		final HalfAdder halfAdder = new HalfAdder();
+		final FullAdder[] fullAdders = new FullAdder[iSize - 1];
 
 		halfAdder.connectInput1(input1.getWireAt(0));
 		halfAdder.connectInput2(input2.getWireAt(0));

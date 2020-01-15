@@ -9,7 +9,7 @@ import java.util.List;
 public class Wire implements Component
 {
 	private static int wires;
-	private List<Component> outputs = new LinkedList<>();
+	private final List<Component> outputs = new LinkedList<>();
 	private boolean isInputConnected;
 	private int value;
 
@@ -34,12 +34,10 @@ public class Wire implements Component
 			throw new IllegalArgumentException("Illegal value for wire, got " + value);
 		this.value = value;
 		for (Component component : outputs)
-		{
 			if (component instanceof Wire)
 				((Wire) component).setValue(value);
 			else
 				component.compute();
-		}
 	}
 
 	public void connectInput(Wire wIn)

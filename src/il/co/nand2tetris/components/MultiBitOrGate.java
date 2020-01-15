@@ -5,7 +5,7 @@ public class MultiBitOrGate extends MultiBitGate
 	public MultiBitOrGate(int iInputCount)
 	{
 		super(iInputCount);
-		OrGate[] or = new OrGate[iInputCount - 1];
+		final OrGate[] or = new OrGate[iInputCount - 1];
 		or[0] = new OrGate();
 		or[0].connectInput1(getInputWireAt(0));
 		or[0].connectInput2(getInputWireAt(1));

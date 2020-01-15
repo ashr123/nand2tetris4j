@@ -9,7 +9,7 @@ public class BitwiseMux extends BitwiseTwoInputGate
 		super(iSize);
 		for (int i = 0; i < iSize; i++)
 		{
-			MuxGate mux = new MuxGate();
+			final MuxGate mux = new MuxGate();
 			mux.ConnectControl(controlInput);
 			mux.connectInput1(getInput1().getWireAt(i));
 			mux.connectInput2(getInput2().getWireAt(i));

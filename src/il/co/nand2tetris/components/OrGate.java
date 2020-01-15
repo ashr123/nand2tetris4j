@@ -5,7 +5,7 @@ public class OrGate extends TwoInputGate
 	public OrGate()
 	{
 		//your code here
-		NAndGate
+		final NAndGate
 				A = new NAndGate(),
 				B = new NAndGate(),
 				AB = new NAndGate();

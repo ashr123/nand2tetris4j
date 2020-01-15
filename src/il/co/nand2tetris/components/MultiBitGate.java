@@ -3,7 +3,7 @@ package il.co.nand2tetris.components;
 public abstract class MultiBitGate extends Gate
 {
 	private WireSet m_wsInput;
-	private Wire output = new Wire();
+	private final Wire output = new Wire();
 
 	public MultiBitGate(int iInputCount)
 	{

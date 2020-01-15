@@ -3,7 +3,7 @@ package il.co.nand2tetris.components;
 public class NotGate extends Gate implements Component
 {
 	private static long notGates, notComputed;
-	private Wire
+	private final Wire
 			input = new Wire(),
 			output = new Wire();
 

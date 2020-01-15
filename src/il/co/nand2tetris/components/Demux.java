@@ -2,7 +2,7 @@ package il.co.nand2tetris.components;
 
 public class Demux extends Gate
 {
-	private Wire
+	private final Wire
 			output1 = new Wire(),
 			output2 = new Wire(),
 			input = new Wire(),

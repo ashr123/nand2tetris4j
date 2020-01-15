@@ -2,8 +2,8 @@ package il.co.nand2tetris.components;
 
 public class ALU extends Gate
 {
-	private WireSet inputX, inputY, output;
-	private Wire
+	private final WireSet inputX, inputY, output;
+	private final Wire
 			zeroX = new Wire(),
 			zeroY = new Wire(),
 			notX = new Wire(),
@@ -19,21 +19,21 @@ public class ALU extends Gate
 		inputY = new WireSet(iSize);
 		output = new WireSet(iSize);
 
-		BitwiseMux
+		final BitwiseMux
 				zxMux = new BitwiseMux(iSize),
 				zyMux = new BitwiseMux(iSize),
 				nxMux = new BitwiseMux(iSize),
 				nyMux = new BitwiseMux(iSize),
 				fMux = new BitwiseMux(iSize),
 				noMux = new BitwiseMux(iSize);
-		BitwiseNotGate
+		final BitwiseNotGate
 				nx = new BitwiseNotGate(iSize),
 				ny = new BitwiseNotGate(iSize),
 				no = new BitwiseNotGate(iSize);
-		BitwiseAndGate andGate = new BitwiseAndGate(iSize);
-		MultiBitAdder adder = new MultiBitAdder(iSize);
-		MultiBitOrGate multiBitOr = new MultiBitOrGate(iSize);
-		NotGate not = new NotGate();
+		final BitwiseAndGate andGate = new BitwiseAndGate(iSize);
+		final MultiBitAdder adder = new MultiBitAdder(iSize);
+		final MultiBitOrGate multiBitOr = new MultiBitOrGate(iSize);
+		final NotGate not = new NotGate();
 
 		zxMux.connectInput1(inputX);
 		zxMux.connectControl(zeroX);
@@ -84,10 +84,10 @@ public class ALU extends Gate
 		int numX = 5, numY = 6;
 		inputX.Set2sComplement(numX);
 		inputY.Set2sComplement(numY);
-		WireSet result = new WireSet(output.getSize());
-		BitwiseAndGate bitwiseAnd = new BitwiseAndGate(inputX.getSize());
-		BitwiseOrGate bitwiseOr = new BitwiseOrGate(inputX.getSize());
-		BitwiseNotGate bitwiseNot = new BitwiseNotGate(inputX.getSize());
+		final WireSet result = new WireSet(output.getSize());
+		final BitwiseAndGate bitwiseAnd = new BitwiseAndGate(inputX.getSize());
+		final BitwiseOrGate bitwiseOr = new BitwiseOrGate(inputX.getSize());
+		final BitwiseNotGate bitwiseNot = new BitwiseNotGate(inputX.getSize());
 		bitwiseAnd.connectInput1(inputX);
 		bitwiseAnd.connectInput2(inputY);
 		bitwiseOr.connectInput1(inputX);

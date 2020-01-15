@@ -7,7 +7,7 @@ public class BitwiseAndGate extends BitwiseTwoInputGate
 		super(iSize);
 		for (int i = 0; i < iSize; i++)
 		{
-			AndGate and = new AndGate();
+			final AndGate and = new AndGate();
 			and.connectInput1(getInput1().getWireAt(i));
 			and.connectInput2(getInput2().getWireAt(i));
 			getOutput().getWireAt(i).connectInput(and.getOutput());

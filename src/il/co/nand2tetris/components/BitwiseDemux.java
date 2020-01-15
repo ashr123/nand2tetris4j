@@ -2,8 +2,8 @@ package il.co.nand2tetris.components;
 
 public class BitwiseDemux extends Gate
 {
-	private WireSet output1, output2, input;
-	private Wire control = new Wire();
+	private final WireSet output1, output2, input;
+	private final Wire control = new Wire();
 
 	public BitwiseDemux(int iSize)
 	{
@@ -14,7 +14,7 @@ public class BitwiseDemux extends Gate
 
 		for (int i = 0; i < iSize; i++)
 		{
-			Demux demux = new Demux();
+			final Demux demux = new Demux();
 			demux.connectControl(control);
 			demux.connectInput(input.getWireAt(i));
 			output1.getWireAt(i).connectInput(demux.getOutput1());

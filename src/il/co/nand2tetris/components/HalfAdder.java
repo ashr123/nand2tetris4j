@@ -6,8 +6,8 @@ public class HalfAdder extends TwoInputGate
 
 	public HalfAdder()
 	{
-		XorGate sum = new XorGate();
-		AndGate carry = new AndGate();
+		final XorGate sum = new XorGate();
+		final AndGate carry = new AndGate();
 
 		sum.connectInput1(getInput1());
 		sum.connectInput2(getInput2());

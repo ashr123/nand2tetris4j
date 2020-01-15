@@ -4,8 +4,8 @@ public class AndGate extends TwoInputGate
 {
 	public AndGate()
 	{
-		NotGate m_gNot = new NotGate();
-		NAndGate m_gNand = new NAndGate();
+		final NotGate m_gNot = new NotGate();
+		final NAndGate m_gNand = new NAndGate();
 		m_gNot.connectInput(m_gNand.getOutput());
 		m_gNand.connectInput1(getInput1());
 		m_gNand.connectInput2(getInput2());

@@ -8,7 +8,7 @@ import java.util.stream.IntStream;
  */
 public class WireSet
 {
-	private Wire[] m_aWires;
+	private final Wire[] m_aWires;
 	private boolean isInputConnected;
 
 	public WireSet(int iSize)
@@ -38,7 +38,7 @@ public class WireSet
 	@Override
 	public String toString()
 	{
-		StringBuilder s = new StringBuilder("[");
+		final StringBuilder s = new StringBuilder("[");
 		for (int i = m_aWires.length - 1; i >= 0; i--)
 			s.append(m_aWires[i].getValue());
 		s.append("]");
@@ -84,13 +84,13 @@ public class WireSet
 	{
 		if (m_aWires[m_aWires.length - 1].getValue() == 1)
 		{
-			int[] tempArr = Arrays.stream(m_aWires)
+			final int[] tempArr = Arrays.stream(m_aWires)
 					.mapToInt(m_aWire -> 1 - m_aWire.getValue())
 					.toArray();
 
 			for (int i = 0, carry = 1; i < m_aWires.length; i++)
 			{
-				int temp = carry + tempArr[i];
+				final int temp = carry + tempArr[i];
 				tempArr[i] = temp % 2;
 				carry = temp == 2 ? 1 : 0;
 			}
@@ -120,7 +120,7 @@ public class WireSet
 
 			for (int i = 0, carry = 1; i < m_aWires.length; i++)
 			{
-				int temp = carry + m_aWires[i].getValue();
+				final int temp = carry + m_aWires[i].getValue();
 				m_aWires[i].setValue(temp % 2);
 				carry = temp == 2 ? 1 : 0;
 			}

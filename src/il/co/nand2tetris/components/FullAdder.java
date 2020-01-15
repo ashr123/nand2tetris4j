@@ -8,10 +8,10 @@ public class FullAdder extends TwoInputGate
 
 	public FullAdder()
 	{
-		HalfAdder
+		final HalfAdder
 				A = new HalfAdder(),
 				b = new HalfAdder();
-		OrGate or = new OrGate();
+		final OrGate or = new OrGate();
 
 		A.connectInput1(getInput1());
 		A.connectInput2(getInput2());

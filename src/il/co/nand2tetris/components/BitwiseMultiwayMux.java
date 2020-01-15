@@ -2,8 +2,8 @@ package il.co.nand2tetris.components;
 
 public class BitwiseMultiwayMux extends Gate
 {
-	private WireSet output, control;
-	private WireSet[] inputs;
+	private final WireSet output, control;
+	private final WireSet[] inputs;
 
 	public BitwiseMultiwayMux(int iSize, int cControlBits)
 	{
@@ -16,7 +16,7 @@ public class BitwiseMultiwayMux extends Gate
 			inputs[i] = new WireSet(iSize);
 
 		//your code here
-		BitwiseMux[] bitwiseMux = new BitwiseMux[inputs.length - 1];
+		final BitwiseMux[] bitwiseMux = new BitwiseMux[inputs.length - 1];
 		for (int i = 0; i < bitwiseMux.length; i++)
 			bitwiseMux[i] = new BitwiseMux(iSize);
 
@@ -35,11 +35,6 @@ public class BitwiseMultiwayMux extends Gate
 		}
 
 		output.connectInput(bitwiseMux[0].getOutput());
-	}
-
-	private static int log2(int x)
-	{
-		return (int) (Math.log(x) / Math.log(2) + 1e-10);
 	}
 
 	public void connectInput(int i, WireSet wsInput)

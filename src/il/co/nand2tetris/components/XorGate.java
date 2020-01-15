@@ -5,7 +5,7 @@ public class XorGate extends TwoInputGate
 	public XorGate()
 	{
 		//your code here
-		NAndGate
+		final NAndGate
 				a = new NAndGate(),
 				b = new NAndGate(),
 				c = new NAndGate(),

@@ -7,11 +7,11 @@ public class MuxGate extends TwoInputGate
 	public MuxGate()
 	{
 		//your code here
-		NotGate not = new NotGate();
-		AndGate
+		final NotGate not = new NotGate();
+		final AndGate
 				xAndNotC = new AndGate(),
 				cAndy = new AndGate();
-		OrGate or = new OrGate();
+		final OrGate or = new OrGate();
 
 		not.connectInput(controlInput);
 

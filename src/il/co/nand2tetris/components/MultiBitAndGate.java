@@ -5,7 +5,7 @@ public class MultiBitAndGate extends MultiBitGate
 	public MultiBitAndGate(int iInputCount)
 	{
 		super(iInputCount);
-		AndGate[] and = new AndGate[iInputCount - 1];
+		final AndGate[] and = new AndGate[iInputCount - 1];
 		and[0] = new AndGate();
 		and[0].connectInput1(getInputWireAt(0));
 		and[0].connectInput2(getInputWireAt(1));
