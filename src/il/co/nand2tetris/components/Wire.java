@@ -8,7 +8,7 @@ import java.util.List;
  */
 public class Wire implements Component
 {
-	private static int wires;
+	private static long wires;
 	private final List<Component> outputs = new LinkedList<>();
 	private boolean isInputConnected;
 	private int value;
@@ -18,7 +18,7 @@ public class Wire implements Component
 		wires++;
 	}
 
-	public static int getWires()
+	public static long getWires()
 	{
 		return wires;
 	}

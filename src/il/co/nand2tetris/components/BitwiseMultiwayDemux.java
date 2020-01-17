@@ -63,10 +63,6 @@ public class BitwiseMultiwayDemux extends Gate
 		return outputs;
 	}
 
-	/**
-	 * TODO Fix
-	 * @return
-	 */
 	@Override
 	public boolean TestGate()
 	{

@@ -25,12 +25,12 @@ public class Main
 //		BitwiseMux bitwiseMux = new BitwiseMux(size);
 //		BitwiseDemux bitwiseDemux = new BitwiseDemux(size);
 //		BitwiseMultiwayMux bitwiseMultiwayMux = new BitwiseMultiwayMux(size, 4);
-//		BitwiseMultiwayDemux bitwiseMultiwayDemux = new BitwiseMultiwayDemux(size, 4);
+		BitwiseMultiwayDemux bitwiseMultiwayDemux = new BitwiseMultiwayDemux(size, 4);
 //		HalfAdder halfAdder = new HalfAdder();
 //		FullAdder fullAdder = new FullAdder();
 //		WireSet wireSet = new WireSet(size);
 //		MultiBitAdder multiBitAdder = new MultiBitAdder(4);//1.3
-		ALU alu = new ALU(8);
+//		ALU alu = new ALU(8);
 //		SingleBitRegister singleBitRegister = new SingleBitRegister();
 //		MultiBitRegister multiBitRegister = new MultiBitRegister(size);
 //		Memory memory = new Memory(4, 4);
@@ -54,12 +54,12 @@ public class Main
 				!demux.TestGate() ||
 				!bitwiseMux.TestGate() ||
 				!bitwiseDemux.TestGate() ||
-				!bitwiseMultiwayMux.TestGate() ||
-				!bitwiseMultiwayDemux.TestGate() ||
+				!bitwiseMultiwayMux.TestGate() ||*/
+				!bitwiseMultiwayDemux.TestGate() /*||
 				!halfAdder.TestGate() ||
 				!fullAdder.TestGate() ||
 				!multiBitAdder.TestGate() ||*/
-				!alu.TestGate() /*||
+				/*!alu.TestGate()*/ /*||
 				!singleBitRegister.TestGate() ||
 				!multiBitRegister.TestGate() ||
 				!memory.TestGate()*/)
@@ -68,6 +68,7 @@ public class Main
 		System.out.println("Nand Gates: " + NAndGate.getNandGates() + '\n' +
 				"Nand Gates computed: " + NAndGate.getNandCompute() + '\n' +
 				"Not Gates: " + NotGate.getNotGates() + '\n' +
-				"Not Gates computed: " + NotGate.getNotComputed());
+				"Not Gates computed: " + NotGate.getNotComputed() + '\n' +
+				"Wires: " + Wire.getWires());
 	}
 }
