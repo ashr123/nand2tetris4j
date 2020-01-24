@@ -97,7 +97,6 @@ public class Memory extends SequentialGate
 	{
 		try (Scanner scanner = new Scanner(new File(sFileName)))
 		{
-			switch ()
 			int iAddress = 0;
 			while (scanner.hasNextLine())
 			{
