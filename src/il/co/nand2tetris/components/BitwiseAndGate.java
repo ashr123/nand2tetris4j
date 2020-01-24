@@ -18,7 +18,7 @@ public class BitwiseAndGate extends BitwiseTwoInputGate
 	@Override
 	public boolean TestGate()
 	{
-		for (int i = 0; i < getInput1().getSize(); i++)
+		for (int i = 0; i < getInput1().size(); i++)
 		{
 			getInput1().getWireAt(i).setValue(0);
 			getInput2().getWireAt(i).setValue(0);

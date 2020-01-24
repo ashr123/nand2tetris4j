@@ -31,7 +31,7 @@ public class BitwiseMux extends BitwiseTwoInputGate
 	@Override
 	public boolean TestGate()
 	{
-		for (int i = 0; i < getInput1().getSize(); i++)
+		for (int i = 0; i < getInput1().size(); i++)
 		{
 			controlInput.setValue(0);
 			getInput1().getWireAt(i).setValue(0);

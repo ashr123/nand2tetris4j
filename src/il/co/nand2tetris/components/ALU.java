@@ -82,12 +82,12 @@ public class ALU extends Gate
 	{
 		//throw new NotImplementedException();
 		int numX = 5, numY = 6;
-		inputX.Set2sComplement(numX);
-		inputY.Set2sComplement(numY);
-		final WireSet result = new WireSet(output.getSize());
-		final BitwiseAndGate bitwiseAnd = new BitwiseAndGate(inputX.getSize());
-		final BitwiseOrGate bitwiseOr = new BitwiseOrGate(inputX.getSize());
-		final BitwiseNotGate bitwiseNot = new BitwiseNotGate(inputX.getSize());
+		inputX.set2sComplement(numX);
+		inputY.set2sComplement(numY);
+		final WireSet result = new WireSet(output.size());
+		final BitwiseAndGate bitwiseAnd = new BitwiseAndGate(inputX.size());
+		final BitwiseOrGate bitwiseOr = new BitwiseOrGate(inputX.size());
+		final BitwiseNotGate bitwiseNot = new BitwiseNotGate(inputX.size());
 		bitwiseAnd.connectInput1(inputX);
 		bitwiseAnd.connectInput2(inputY);
 		bitwiseOr.connectInput1(inputX);
@@ -99,7 +99,7 @@ public class ALU extends Gate
 		notY.setValue(0);
 		f.setValue(1);
 		notOutput.setValue(0);
-		if (output.Get2sComplement() != 0 || negative.getValue() != 0 || zero.getValue() != 1)//0
+		if (output.get2sComplement() != 0 || negative.getValue() != 0 || zero.getValue() != 1)//0
 			return false;
 
 		zeroX.setValue(1);
@@ -108,7 +108,7 @@ public class ALU extends Gate
 		notY.setValue(1);
 		f.setValue(1);
 		notOutput.setValue(1);
-		if (output.Get2sComplement() != 1 || negative.getValue() != 0 || zero.getValue() != 0)//1
+		if (output.get2sComplement() != 1 || negative.getValue() != 0 || zero.getValue() != 0)//1
 			return false;
 
 		zeroX.setValue(1);
@@ -117,7 +117,7 @@ public class ALU extends Gate
 		notY.setValue(0);
 		f.setValue(1);
 		notOutput.setValue(0);
-		if (output.Get2sComplement() != -1 || negative.getValue() != 1 || zero.getValue() != 0)//-1
+		if (output.get2sComplement() != -1 || negative.getValue() != 1 || zero.getValue() != 0)//-1
 			return false;
 
 		zeroX.setValue(0);
@@ -126,7 +126,7 @@ public class ALU extends Gate
 		notY.setValue(1);
 		f.setValue(0);
 		notOutput.setValue(0);
-		if (output.Get2sComplement() != inputX.Get2sComplement() || negative.getValue() != inputX.getWireAt(inputX.getSize() - 1).getValue() || zero.getValue() != (numX == 0 ? 1 : 0))//x
+		if (output.get2sComplement() != inputX.get2sComplement() || negative.getValue() != inputX.getWireAt(inputX.size() - 1).getValue() || zero.getValue() != (numX == 0 ? 1 : 0))//x
 			return false;
 
 		zeroX.setValue(1);
@@ -135,7 +135,7 @@ public class ALU extends Gate
 		notY.setValue(0);
 		f.setValue(0);
 		notOutput.setValue(0);
-		if (output.Get2sComplement() != inputY.Get2sComplement() || negative.getValue() != inputY.getWireAt(inputY.getSize() - 1).getValue() || zero.getValue() != (numY == 0 ? 1 : 0))//y
+		if (output.get2sComplement() != inputY.get2sComplement() || negative.getValue() != inputY.getWireAt(inputY.size() - 1).getValue() || zero.getValue() != (numY == 0 ? 1 : 0))//y
 			return false;
 
 		zeroX.setValue(0);
@@ -144,8 +144,8 @@ public class ALU extends Gate
 		notY.setValue(1);
 		f.setValue(0);
 		notOutput.setValue(1);
-		bitwiseNot.getInput().Set2sComplement(numX);
-		if (output.Get2sComplement() != bitwiseNot.getOutput().Get2sComplement() || negative.getValue() != 1 - inputX.getWireAt(inputX.getSize() - 1).getValue() || zero.getValue() != TestZero())//!x
+		bitwiseNot.getInput().set2sComplement(numX);
+		if (output.get2sComplement() != bitwiseNot.getOutput().get2sComplement() || negative.getValue() != 1 - inputX.getWireAt(inputX.size() - 1).getValue() || zero.getValue() != TestZero())//!x
 			return false;
 
 		zeroX.setValue(1);
@@ -154,8 +154,8 @@ public class ALU extends Gate
 		notY.setValue(0);
 		f.setValue(0);
 		notOutput.setValue(1);
-		bitwiseNot.getInput().Set2sComplement(numY);
-		if (output.Get2sComplement() != bitwiseNot.getOutput().Get2sComplement() || negative.getValue() != 1 - inputY.getWireAt(inputY.getSize() - 1).getValue() || zero.getValue() != TestZero())//!y
+		bitwiseNot.getInput().set2sComplement(numY);
+		if (output.get2sComplement() != bitwiseNot.getOutput().get2sComplement() || negative.getValue() != 1 - inputY.getWireAt(inputY.size() - 1).getValue() || zero.getValue() != TestZero())//!y
 			return false;
 
 		zeroX.setValue(0);
@@ -164,7 +164,7 @@ public class ALU extends Gate
 		notY.setValue(1);
 		f.setValue(1);
 		notOutput.setValue(1);
-		if (output.Get2sComplement() != -inputX.Get2sComplement() || negative.getValue() != 1 - inputX.getWireAt(inputX.getSize() - 1).getValue() || zero.getValue() != (numX == 0 ? 1 : 0))//-x
+		if (output.get2sComplement() != -inputX.get2sComplement() || negative.getValue() != 1 - inputX.getWireAt(inputX.size() - 1).getValue() || zero.getValue() != (numX == 0 ? 1 : 0))//-x
 			return false;
 
 		zeroX.setValue(1);
@@ -173,7 +173,7 @@ public class ALU extends Gate
 		notY.setValue(0);
 		f.setValue(1);
 		notOutput.setValue(1);
-		if (output.Get2sComplement() != -inputY.Get2sComplement() || negative.getValue() != 1 - inputY.getWireAt(inputY.getSize() - 1).getValue() || zero.getValue() != (numY == 0 ? 1 : 0))//-y
+		if (output.get2sComplement() != -inputY.get2sComplement() || negative.getValue() != 1 - inputY.getWireAt(inputY.size() - 1).getValue() || zero.getValue() != (numY == 0 ? 1 : 0))//-y
 			return false;
 
 		zeroX.setValue(0);
@@ -182,8 +182,8 @@ public class ALU extends Gate
 		notY.setValue(1);
 		f.setValue(1);
 		notOutput.setValue(1);
-		result.Set2sComplement(numX + 1);
-		if (output.Get2sComplement() != inputX.Get2sComplement() + 1 || negative.getValue() != result.getWireAt(result.getSize() - 1).getValue() || zero.getValue() != (numX + 1 == 0 ? 1 : 0))//x+1
+		result.set2sComplement(numX + 1);
+		if (output.get2sComplement() != inputX.get2sComplement() + 1 || negative.getValue() != result.getWireAt(result.size() - 1).getValue() || zero.getValue() != (numX + 1 == 0 ? 1 : 0))//x+1
 			return false;
 
 		zeroX.setValue(1);
@@ -192,8 +192,8 @@ public class ALU extends Gate
 		notY.setValue(1);
 		f.setValue(1);
 		notOutput.setValue(1);
-		result.Set2sComplement(numY + 1);
-		if (output.Get2sComplement() != inputY.Get2sComplement() + 1 || negative.getValue() != result.getWireAt(result.getSize() - 1).getValue() || zero.getValue() != (numY + 1 == 0 ? 1 : 0))//y+1
+		result.set2sComplement(numY + 1);
+		if (output.get2sComplement() != inputY.get2sComplement() + 1 || negative.getValue() != result.getWireAt(result.size() - 1).getValue() || zero.getValue() != (numY + 1 == 0 ? 1 : 0))//y+1
 			return false;
 
 		zeroX.setValue(0);
@@ -202,8 +202,8 @@ public class ALU extends Gate
 		notY.setValue(1);
 		f.setValue(1);
 		notOutput.setValue(0);
-		result.Set2sComplement(numX - 1);
-		if (output.Get2sComplement() != inputX.Get2sComplement() - 1 || negative.getValue() != result.getWireAt(result.getSize() - 1).getValue() || zero.getValue() != (numX - 1 == 0 ? 1 : 0))//x-1
+		result.set2sComplement(numX - 1);
+		if (output.get2sComplement() != inputX.get2sComplement() - 1 || negative.getValue() != result.getWireAt(result.size() - 1).getValue() || zero.getValue() != (numX - 1 == 0 ? 1 : 0))//x-1
 			return false;
 
 		zeroX.setValue(1);
@@ -212,8 +212,8 @@ public class ALU extends Gate
 		notY.setValue(0);
 		f.setValue(1);
 		notOutput.setValue(0);
-		result.Set2sComplement(numY - 1);
-		if (output.Get2sComplement() != inputY.Get2sComplement() - 1 || negative.getValue() != result.getWireAt(result.getSize() - 1).getValue() || zero.getValue() != (numY - 1 == 0 ? 1 : 0))//y-1
+		result.set2sComplement(numY - 1);
+		if (output.get2sComplement() != inputY.get2sComplement() - 1 || negative.getValue() != result.getWireAt(result.size() - 1).getValue() || zero.getValue() != (numY - 1 == 0 ? 1 : 0))//y-1
 			return false;
 
 		zeroX.setValue(0);
@@ -222,8 +222,8 @@ public class ALU extends Gate
 		notY.setValue(0);
 		f.setValue(1);
 		notOutput.setValue(0);
-		result.Set2sComplement(numX + numY);
-		if (output.getValue() != inputX.Get2sComplement() + inputY.Get2sComplement() || negative.getValue() != result.getWireAt(result.getSize() - 1).getValue() || zero.getValue() != (numX + numY == 0 ? 1 : 0))//x+y
+		result.set2sComplement(numX + numY);
+		if (output.getValue() != inputX.get2sComplement() + inputY.get2sComplement() || negative.getValue() != result.getWireAt(result.size() - 1).getValue() || zero.getValue() != (numX + numY == 0 ? 1 : 0))//x+y
 			return false;
 
 		zeroX.setValue(0);
@@ -232,8 +232,8 @@ public class ALU extends Gate
 		notY.setValue(0);
 		f.setValue(1);
 		notOutput.setValue(1);
-		result.Set2sComplement(numX - numY);
-		if (output.Get2sComplement() != inputX.Get2sComplement() - inputY.Get2sComplement() || negative.getValue() != result.getWireAt(result.getSize() - 1).getValue() || zero.getValue() != (numX - numY == 0 ? 1 : 0))//x-y
+		result.set2sComplement(numX - numY);
+		if (output.get2sComplement() != inputX.get2sComplement() - inputY.get2sComplement() || negative.getValue() != result.getWireAt(result.size() - 1).getValue() || zero.getValue() != (numX - numY == 0 ? 1 : 0))//x-y
 			return false;
 
 		zeroX.setValue(0);
@@ -242,8 +242,8 @@ public class ALU extends Gate
 		notY.setValue(1);
 		f.setValue(1);
 		notOutput.setValue(1);
-		result.Set2sComplement(numY - numX);
-		if (output.Get2sComplement() != inputY.Get2sComplement() - inputX.Get2sComplement() || negative.getValue() != result.getWireAt(result.getSize() - 1).getValue() || zero.getValue() != (numY - numX == 0 ? 1 : 0))//y-x
+		result.set2sComplement(numY - numX);
+		if (output.get2sComplement() != inputY.get2sComplement() - inputX.get2sComplement() || negative.getValue() != result.getWireAt(result.size() - 1).getValue() || zero.getValue() != (numY - numX == 0 ? 1 : 0))//y-x
 			return false;
 
 		//TODO fix!!!
@@ -253,7 +253,7 @@ public class ALU extends Gate
 		notY.setValue(0);
 		f.setValue(0);
 		notOutput.setValue(0);
-		if (output.Get2sComplement() != bitwiseAnd.getOutput().Get2sComplement() || negative.getValue() != bitwiseAnd.getOutput().getWireAt(bitwiseAnd.getOutput().getSize() - 1).getValue() || zero.getValue() != TestZero())//x&y
+		if (output.get2sComplement() != bitwiseAnd.getOutput().get2sComplement() || negative.getValue() != bitwiseAnd.getOutput().getWireAt(bitwiseAnd.getOutput().size() - 1).getValue() || zero.getValue() != TestZero())//x&y
 			return false;
 
 		//TODO fix!!!
@@ -263,12 +263,12 @@ public class ALU extends Gate
 		notY.setValue(1);
 		f.setValue(0);
 		notOutput.setValue(1);
-		return output.Get2sComplement() == bitwiseOr.getOutput().Get2sComplement() && negative.getValue() == bitwiseOr.getOutput().getWireAt(bitwiseOr.getOutput().getSize() - 1).getValue() && zero.getValue() == TestZero();//x|y
+		return output.get2sComplement() == bitwiseOr.getOutput().get2sComplement() && negative.getValue() == bitwiseOr.getOutput().getWireAt(bitwiseOr.getOutput().size() - 1).getValue() && zero.getValue() == TestZero();//x|y
 	}
 
 	private int TestZero()
 	{
-		for (int i = 0; i < output.getSize(); i++)
+		for (int i = 0; i < output.size(); i++)
 			if (output.getWireAt(i).getValue() == 1)
 				return 0;
 		return 1;

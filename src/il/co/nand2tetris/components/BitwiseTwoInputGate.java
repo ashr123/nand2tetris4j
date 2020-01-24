@@ -39,8 +39,8 @@ public abstract class BitwiseTwoInputGate extends Gate
 		return output;
 	}
 
-	public int getSize()
+	public int size()
 	{
-		return input1.getSize();
+		return input1.size();
 	}
 }

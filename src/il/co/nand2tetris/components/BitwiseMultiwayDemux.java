@@ -32,7 +32,7 @@ public class BitwiseMultiwayDemux extends Gate
 		{
 			bitwiseDemux[i - 1].connectInput(bitwiseDemux[i / 2 - 1].getOutput1());
 			bitwiseDemux[i - 2].connectInput(bitwiseDemux[i / 2 - 1].getOutput2());
-			bitwiseDemux[i / 2 - 1].connectControl(control.getWireAt(control.getSize() - 1 - log2(i / 2)));
+			bitwiseDemux[i / 2 - 1].connectControl(control.getWireAt(control.size() - 1 - log2(i / 2)));
 		}
 
 		bitwiseDemux[0].connectInput(input);
@@ -66,11 +66,11 @@ public class BitwiseMultiwayDemux extends Gate
 	@Override
 	public boolean TestGate()
 	{
-		input.SetValue(2);
+		input.setValue(2);
 		for (int i = 0; i < outputs.length; i++)
 		{
-			control.SetValue(i);
-			for (int j = 0; j < input.getSize(); j++)
+			control.setValue(i);
+			for (int j = 0; j < input.size(); j++)
 				if (outputs[i].getWireAt(j).getValue() != input.getWireAt(j).getValue())
 					return false;
 		}

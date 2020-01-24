@@ -55,7 +55,7 @@ public class BitwiseDemux extends Gate
 	@Override
 	public boolean TestGate()
 	{
-		for (int i = 0; i < input.getSize(); i++)
+		for (int i = 0; i < input.size(); i++)
 		{
 			control.setValue(0);
 			input.getWireAt(i).setValue(0);

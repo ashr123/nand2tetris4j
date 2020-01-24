@@ -42,7 +42,7 @@ public class BitwiseNotGate extends Gate
 	@Override
 	public boolean TestGate()
 	{
-		for (int i = 0; i < input.getSize(); i++)
+		for (int i = 0; i < input.size(); i++)
 		{
 			input.getWireAt(i).setValue(0);
 			if (output.getWireAt(i).getValue() != 1)

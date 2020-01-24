@@ -68,12 +68,12 @@ public class MultiBitAdder extends Gate
 	@Override
 	public boolean TestGate()
 	{
-		for (int i = 0; i < 1 << input1.getSize(); i++)
+		for (int i = 0; i < 1 << input1.size(); i++)
 		{
-			input1.SetValue(i);
-			for (int j = 0; j < (1 << input2.getSize()) - i; j++)
+			input1.setValue(i);
+			for (int j = 0; j < (1 << input2.size()) - i; j++)
 			{
-				input2.SetValue(j);
+				input2.setValue(j);
 				if (output.getValue() != i + j)
 					return false;
 			}
@@ -85,6 +85,6 @@ public class MultiBitAdder extends Gate
 	@Override
 	public String toString()
 	{
-		return input1 + "(" + input1.Get2sComplement() + ")" + " + " + input2 + "(" + input2.Get2sComplement() + ")" + " = " + output + "(" + output.Get2sComplement() + ")";
+		return input1 + "(" + input1.get2sComplement() + ")" + " + " + input2 + "(" + input2.get2sComplement() + ")" + " = " + output + "(" + output.get2sComplement() + ")";
 	}
 }

@@ -35,16 +35,6 @@ public class WireSet
 		isInputConnected = true;
 	}
 
-	@Override
-	public String toString()
-	{
-		final StringBuilder s = new StringBuilder("[");
-		for (int i = m_aWires.length - 1; i >= 0; i--)
-			s.append(m_aWires[i].getValue());
-		s.append("]");
-		return s.toString();
-	}
-
 	/**
 	 * transform the binary code into a positive integer
 	 *
@@ -58,7 +48,7 @@ public class WireSet
 				.sum();
 	}
 
-	public void SetValue(int iValue)
+	public void setValue(int iValue)
 	{
 		//throw new NotImplementedException();
 		//if (iValue == 0)
@@ -80,7 +70,7 @@ public class WireSet
 	 *
 	 * @return
 	 */
-	public int Get2sComplement()
+	public int get2sComplement()
 	{
 		if (m_aWires[m_aWires.length - 1].getValue() == 1)
 		{
@@ -107,14 +97,14 @@ public class WireSet
 	 *
 	 * @param iValue
 	 */
-	public void Set2sComplement(final int iValue)
+	public void set2sComplement(final int iValue)
 	{
 		//throw new NotImplementedException();
 		if (iValue >= 0)
-			SetValue(iValue);
+			setValue(iValue);
 		else
 		{
-			SetValue(-iValue);
+			setValue(-iValue);
 			for (Wire m_aWire : m_aWires)
 				m_aWire.setValue(1 - m_aWire.getValue());
 
@@ -127,8 +117,18 @@ public class WireSet
 		}
 	}
 
-	public int getSize()
+	public int size()
 	{
 		return m_aWires.length;
+	}
+
+	@Override
+	public String toString()
+	{
+		final StringBuilder s = new StringBuilder("[");
+		for (int i = m_aWires.length - 1; i >= 0; i--)
+			s.append(m_aWires[i].getValue());
+		s.append("]");
+		return s.toString();
 	}
 }

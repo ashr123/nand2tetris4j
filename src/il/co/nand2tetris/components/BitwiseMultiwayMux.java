@@ -32,7 +32,7 @@ public class BitwiseMultiwayMux extends Gate
 		{
 			bitwiseMux[i / 2 - 1].connectInput1(bitwiseMux[i - 1].getOutput());
 			bitwiseMux[i / 2 - 1].connectInput2(bitwiseMux[i - 2].getOutput());
-			bitwiseMux[i / 2 - 1].connectControl(control.getWireAt(control.getSize() - 1 - log2(i / 2)));
+			bitwiseMux[i / 2 - 1].connectControl(control.getWireAt(control.size() - 1 - log2(i / 2)));
 		}
 
 		output.connectInput(bitwiseMux[0].getOutput());
@@ -68,9 +68,9 @@ public class BitwiseMultiwayMux extends Gate
 	{
 		for (int i = 0; i < inputs.length; i++)
 		{
-			inputs[i].SetValue(i);
-			control.SetValue(i);
-			for (int j = 0; j < output.getSize(); j++)
+			inputs[i].setValue(i);
+			control.setValue(i);
+			for (int j = 0; j < output.size(); j++)
 				if (inputs[i].getWireAt(j).getValue() != output.getWireAt(j).getValue())
 					return false;
 		}
