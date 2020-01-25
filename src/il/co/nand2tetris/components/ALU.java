@@ -328,4 +328,9 @@ public class ALU extends Gate
 	{
 		return negative;
 	}
+
+	public int size()
+	{
+		return inputX.size();
+	}
 }

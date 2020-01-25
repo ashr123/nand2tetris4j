@@ -65,6 +65,11 @@ public class MultiBitAdder extends Gate
 		input2.connectInput(wInput);
 	}
 
+	public int size()
+	{
+		return input1.size();
+	}
+
 	@Override
 	public boolean TestGate()
 	{

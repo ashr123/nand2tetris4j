@@ -24,4 +24,9 @@ public abstract class MultiBitGate extends Gate
 	{
 		return output;
 	}
+
+	public int size()
+	{
+		return m_wsInput.size();
+	}
 }

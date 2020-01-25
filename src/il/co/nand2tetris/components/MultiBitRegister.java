@@ -36,6 +36,11 @@ public class MultiBitRegister extends Gate
 		return output;
 	}
 
+	public int size()
+	{
+		return input.size();
+	}
+
 	public Wire getLoad()
 	{
 		return load;

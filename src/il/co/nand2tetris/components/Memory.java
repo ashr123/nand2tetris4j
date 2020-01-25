@@ -105,12 +105,23 @@ public class Memory extends SequentialGate
 					throw new IOException("Every line must contain a single instruction with " + input.size() + " bits (line " + iAddress + ").");
 				int iValue = 0;
 				for (int i = 0; i < input.size(); i++)
-					if (sLine.charAt(i) == '1')
-						iValue = (iValue << 1) + 1;
-					else if (sLine.charAt(i) == '0')
-						iValue <<= 1; // iValue = iValue * 2
-					else
-						throw new IOException("Can only have 0 or 1 for bits (line " + iAddress + ").");
+					switch (sLine.charAt(i))
+					{
+						case '0':
+							iValue <<= 1;
+							break;
+						case '1':
+							iValue = (iValue << 1) + 1;
+							break;
+						default:
+							throw new IOException("Can only have 0 or 1 for bits (line " + iAddress + ").");
+					}
+//					if (sLine.charAt(i) == '1')
+//						iValue = (iValue << 1) + 1;
+//					else if (sLine.charAt(i) == '0')
+//						iValue <<= 1; // iValue = iValue * 2
+//					else
+//						throw new IOException("Can only have 0 or 1 for bits (line " + iAddress + ").");
 				registers[iAddress] = iValue;
 
 				iAddress++;

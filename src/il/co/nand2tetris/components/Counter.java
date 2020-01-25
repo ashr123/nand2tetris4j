@@ -29,6 +29,31 @@ public class Counter extends SequentialGate
 		reset.connectInput(w);
 	}
 
+	public WireSet getInput()
+	{
+		return input;
+	}
+
+	public WireSet getOutput()
+	{
+		return output;
+	}
+
+	public Wire getLoad()
+	{
+		return load;
+	}
+
+	public Wire getReset()
+	{
+		return reset;
+	}
+
+	public int size()
+	{
+		return input.size();
+	}
+
 	@Override
 	public void onClockUp()
 	{
