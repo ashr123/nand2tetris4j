@@ -108,7 +108,7 @@ public class Memory extends SequentialGate
 					if (sLine.charAt(i) == '1')
 						iValue = (iValue << 1) + 1;
 					else if (sLine.charAt(i) == '0')
-						iValue = iValue << 1; // iValue = iValue * 2
+						iValue <<= 1; // iValue = iValue * 2
 					else
 						throw new IOException("Can only have 0 or 1 for bits (line " + iAddress + ").");
 				registers[iAddress] = iValue;
