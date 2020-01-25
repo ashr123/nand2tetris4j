@@ -7,5 +7,5 @@ public abstract class Gate
 		return (int) (Math.log(x) / Math.log(2) + 1e-10);
 	}
 
-	public abstract boolean TestGate();
+	public abstract boolean testGate();
 }

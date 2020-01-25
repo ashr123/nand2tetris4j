@@ -15,7 +15,7 @@ public class BitwiseOrGate extends BitwiseTwoInputGate
 	}
 
 	@Override
-	public boolean TestGate()
+	public boolean testGate()
 	{
 		for (int i = 0; i < getInput1().size(); i++)
 		{

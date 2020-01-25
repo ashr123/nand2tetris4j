@@ -40,7 +40,7 @@ public class BitwiseNotGate extends Gate
 	}
 
 	@Override
-	public boolean TestGate()
+	public boolean testGate()
 	{
 		for (int i = 0; i < input.size(); i++)
 		{

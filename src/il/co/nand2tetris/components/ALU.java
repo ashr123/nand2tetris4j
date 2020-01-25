@@ -78,7 +78,7 @@ public class ALU extends Gate
 
 	@SuppressWarnings("DuplicatedCode")
 	@Override
-	public boolean TestGate()
+	public boolean testGate()
 	{
 		//throw new NotImplementedException();
 		int numX = 5, numY = 6;

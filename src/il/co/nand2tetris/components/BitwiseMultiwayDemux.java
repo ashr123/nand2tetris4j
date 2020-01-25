@@ -64,7 +64,7 @@ public class BitwiseMultiwayDemux extends Gate
 	}
 
 	@Override
-	public boolean TestGate()
+	public boolean testGate()
 	{
 		input.setValue(2);
 		for (int i = 0; i < outputs.length; i++)

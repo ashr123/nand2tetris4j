@@ -64,7 +64,7 @@ public class BitwiseMultiwayMux extends Gate
 	}
 
 	@Override
-	public boolean TestGate()
+	public boolean testGate()
 	{
 		for (int i = 0; i < inputs.length; i++)
 		{

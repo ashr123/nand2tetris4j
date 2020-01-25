@@ -71,7 +71,7 @@ public class MultiBitAdder extends Gate
 	}
 
 	@Override
-	public boolean TestGate()
+	public boolean testGate()
 	{
 		for (int i = 0; i < 1 << input1.size(); i++)
 		{

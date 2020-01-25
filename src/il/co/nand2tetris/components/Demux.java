@@ -58,7 +58,7 @@ public class Demux extends Gate
 
 	@SuppressWarnings("DuplicatedCode")
 	@Override
-	public boolean TestGate()
+	public boolean testGate()
 	{
 		control.setValue(0);
 		input.setValue(0);

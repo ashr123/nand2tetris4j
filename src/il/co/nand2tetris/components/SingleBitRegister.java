@@ -48,7 +48,7 @@ public class SingleBitRegister extends Gate
 	}
 
 	@Override
-	public boolean TestGate()
+	public boolean testGate()
 	{
 		load.setValue(1);
 		input.setValue(1);

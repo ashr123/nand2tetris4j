@@ -47,7 +47,7 @@ public class MultiBitRegister extends Gate
 	}
 
 	@Override
-	public boolean TestGate()
+	public boolean testGate()
 	{
 		load.setValue(1);
 		input.getWireAt(0).setValue(1);

@@ -24,7 +24,7 @@ public class MultiBitAndGate extends MultiBitGate
 	 * @return
 	 */
 	@Override
-	public boolean TestGate()
+	public boolean testGate()
 	{
 		return true;
 	}

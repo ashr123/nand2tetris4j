@@ -29,7 +29,7 @@ public class BitwiseMux extends BitwiseTwoInputGate
 
 	@SuppressWarnings("DuplicatedCode")
 	@Override
-	public boolean TestGate()
+	public boolean testGate()
 	{
 		for (int i = 0; i < getInput1().size(); i++)
 		{

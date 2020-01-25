@@ -23,7 +23,7 @@ public class OrGate extends TwoInputGate
 	}
 
 	@Override
-	public boolean TestGate()
+	public boolean testGate()
 	{
 		getInput1().setValue(0);
 		getInput2().setValue(0);

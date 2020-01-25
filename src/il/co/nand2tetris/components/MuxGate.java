@@ -39,7 +39,7 @@ public class MuxGate extends TwoInputGate
 
 	@SuppressWarnings("DuplicatedCode")
 	@Override
-	public boolean TestGate()
+	public boolean testGate()
 	{
 		controlInput.setValue(0);
 		getInput1().setValue(0);

@@ -27,7 +27,7 @@ public class HalfAdder extends TwoInputGate
 
 	@SuppressWarnings("DuplicatedCode")
 	@Override
-	public boolean TestGate()
+	public boolean testGate()
 	{
 		getInput1().setValue(0);
 		getInput2().setValue(0);

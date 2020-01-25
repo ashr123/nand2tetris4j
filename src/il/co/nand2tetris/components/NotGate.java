@@ -46,7 +46,7 @@ public class NotGate extends Gate implements Component
 	}
 
 	@Override
-	public boolean TestGate()
+	public boolean testGate()
 	{
 		input.setValue(0);
 		if (output.getValue() != 1)

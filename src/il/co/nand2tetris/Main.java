@@ -55,7 +55,7 @@ public class Main
 				!bitwiseMux.TestGate() ||
 				!bitwiseDemux.TestGate() ||
 				!bitwiseMultiwayMux.TestGate() ||*/
-				!bitwiseMultiwayDemux.TestGate() /*||
+				!bitwiseMultiwayDemux.testGate() /*||
 				!halfAdder.TestGate() ||
 				!fullAdder.TestGate() ||
 				!multiBitAdder.TestGate() ||*/
