@@ -97,8 +97,7 @@ public class Memory extends SequentialGate
 	{
 		try (Scanner scanner = new Scanner(new File(sFileName)))
 		{
-			int iAddress = 0;
-			while (scanner.hasNextLine())
+			for (int iAddress = 1; scanner.hasNextLine(); iAddress++)
 			{
 				String sLine = scanner.nextLine().trim();
 				if (sLine.length() != input.size())
@@ -116,15 +115,7 @@ public class Memory extends SequentialGate
 						default:
 							throw new IOException("Can only have 0 or 1 for bits (line " + iAddress + ").");
 					}
-//					if (sLine.charAt(i) == '1')
-//						iValue = (iValue << 1) + 1;
-//					else if (sLine.charAt(i) == '0')
-//						iValue <<= 1; // iValue = iValue * 2
-//					else
-//						throw new IOException("Can only have 0 or 1 for bits (line " + iAddress + ").");
 				registers[iAddress] = iValue;
-
-				iAddress++;
 			}
 		}
 	}
